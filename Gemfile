@@ -33,7 +33,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-#for configuration of sensitive information
+# User management
+gem 'clearance'
+
+# for configuration of sensitive information
 gem 'figaro'
 
 group :development, :test do
