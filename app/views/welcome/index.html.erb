@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,11 +8,11 @@
 </head>
 <body>
   <div id="header">
-    <% if signed_in? -%>
+    <% if true %>
       <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
     <% else -%>
       <%= link_to t(".sign_in"), sign_in_path %>
-    <% end -%>
+    <% end %>
   </div>
 
   <div id="flash">
@@ -19,6 +21,6 @@
     <% end %>
   </div>
 
-  <%= yield %>
+  <h1> Hello </h1>
 </body>
 </html>
