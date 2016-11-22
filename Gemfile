@@ -33,17 +33,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-<<<<<<< HEAD
 # User management
 gem 'clearance'
 
 # for configuration of sensitive information
 gem 'figaro'
-=======
+
 #facebook
 gem 'omniauth'
 gem 'omniauth-facebook'
->>>>>>> feature/facebook
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
