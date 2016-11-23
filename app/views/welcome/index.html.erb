@@ -1,26 +1,13 @@
-
-
-<!DOCTYPE html>
-<html>
-<head>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
-  <div id="header">
-    <% if true %>
-      <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
-    <% else -%>
-      <%= link_to t(".sign_in"), sign_in_path %>
-    <% end %>
+<div class="hero-header">
+  <div class="main-text">Pair BnB</div>
+  <div class="sub-text">A place to find your next home</div>
+</div>
+<div class="div-one">
+  <div class="para-one">
+    <h1>About Us</h1>
+    HELO</div>
+  <div class="para-two">
+    <h1>Why use us</h1>
+    WE ARE AWESOME!!
   </div>
-
-  <div id="flash">
-    <% flash.each do |key, value| -%>
-      <div id="flash_<%= key %>"><%=h value %></div>
-    <% end %>
-  </div>
-
-  <h1> Hello </h1>
-</body>
-</html>
+</div>
