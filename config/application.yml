@@ -11,5 +11,5 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 development:
-  FBOOK_KEY: '1763725953879434'
-  FBOOK_SECRET: '298e8245f758f411d868a417d2273c7e'
+  FACEBOOK_KEY: '1763725953879434'
+  FACEBOOK_SECRET: '72c423fd2f5f15bff8b26a61b22caeaf'
