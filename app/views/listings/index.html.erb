@@ -1,0 +1,11 @@
+<h3>Listings</h3>
+<ul>
+<% @list = Listings.all %>
+<% @list.each do |listing| %>
+	<li>
+		<h4><%= listing.property_name %>, listing_path(@listing)</h4>
+		<p>Location: <%= listing.country %><%= listing.town %></p>
+		<p>Description: <%= listing.description %></p>
+	</li>
+<% end %>
+</ul>

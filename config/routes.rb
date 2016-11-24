@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
 
   resources :users, only: [:show, :edit, :update, :destroy] 
+
+  get "/listings/new", to: "listing#new", as: "listing"
+  post "/listings", to: "listing#form"
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
