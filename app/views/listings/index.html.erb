@@ -1,0 +1,33 @@
+<h1>Listings</h1>
+
+<%= link_to "Add a new listing", new_listing_path %>
+
+<table>
+	<thead>
+		<tr>
+			<th>No</th>
+			<th>Property_name</th>
+			<th>Country</th>
+			<th>City/Town</th>
+			<th>Home_type</th>
+			<th>Guest_no</th>
+			<th>Description</th>
+			<th>Price</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% @listings.each.with_index(1) do |listing, index| %>
+		<tr>
+			<td><%= "*" if listing.mine?(current_user) %><%= index %></td>
+			<td><%= link_to listing.property_name, listing_path(listing.id) %></td>
+			<td><%= listing.country %></td>
+			<td><%= listing.city_town %></td>
+			<td><%= listing.home_type %></td>
+			<td><%= listing.guest %></td>
+			<td><%= listing.description %></td>
+			<td><%= listing.price %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+

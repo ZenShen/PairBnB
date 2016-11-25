@@ -1,0 +1,16 @@
+<h1>We Are Glad You clicked on Us!</h1>
+
+<% if @listing.mine?(current_user) %>
+<%= link_to "Edit listing", edit_listing_path(@listing) %>
+<%= link_to "Delete Listing", listing_path(@listing), method: :delete, data: {:confirm => 'Are you sure?'} %>
+<% end %>
+
+<h2><%= @listing.property_name %></h2>
+	<h3>Country: <%= @listing.country %></h3>
+	<h3>City/Town: <%= @listing.city_town %></h3>
+	<h3>Home type: <%= @listing.home_type %></h3>
+	<h3>No. of guests: <%= @listing.guest %></h3>
+	<h3>Description : <%= @listing.description %></h3>
+	<h3>Price (negotiable) : <%= @listing.price %></h3>
+
+<%= link_to "Back to all listings", listings_path %>
