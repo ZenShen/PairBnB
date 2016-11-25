@@ -1,6 +1,8 @@
 <h1>Listings</h1>
 
+<% if @user.role == "superadmin" || @user.role == "landlord" %>
 <%= link_to "Add a new listing", new_listing_path %>
+<% end %>
 
 <table>
 	<thead>
@@ -31,3 +33,4 @@
 	</tbody>
 </table>
 
+<%= will_paginate @listings %>

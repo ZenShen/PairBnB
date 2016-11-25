@@ -9,9 +9,10 @@
 5.times do
   User.create(
   	email: Faker::Internet.email,
-  	password: "123456"
+  	password: "123456",
+  	role: 1
   	)
-  puts "Created 1 user"
+  puts "Created user with role 1"
 end
 
 User.all.each do |user|
@@ -27,4 +28,13 @@ User.all.each do |user|
 	    	)
 		puts "Created 1 listing"
 	end
+end
+
+10.times do
+  User.create(
+  	email: Faker::Internet.email,
+  	password: "123456",
+  	role: 2
+  	)
+  puts "Created 1 user"
 end

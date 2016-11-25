@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
   has_many :authentications, :dependent => :destroy
   has_many :listings
 
+  enum role: { superadmin: 0,
+               landlord: 1,
+               tenant: 2 }
+
   def self.create_with_auth_and_hash(authentication,auth_hash)
     create! do |u|
       # u.first_name = auth_hash["info"]["first_name"]
