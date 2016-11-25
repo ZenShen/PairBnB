@@ -1,6 +1,14 @@
 class ListingsController < ApplicationController
 	def index
-		@listings = Listing.all
+		@user = current_user
+		
+		if @user.role == "landlord"
+			@listings = Listing.where(user_id: current_user.id)
+			@listings = @listings.paginate(:page => params[:page], :per_page => 5)
+		else
+			@listings = Listing.all
+			@listings = @listings.paginate(:page => params[:page], :per_page => 5)		
+		end
 	end
 
 	def show
