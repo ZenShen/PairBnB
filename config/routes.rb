@@ -16,15 +16,18 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update, :destroy] 
 
-  get "/listings/new", to: "listing#new", as: "listing"
-  post "/listings", to: "listing#form"
+  resources :listings
+  # get "/listings", to: "listing/index"
+  # get "/listings/:id", to: "listing/show"
+  # get "/listings/new", to: "listing#new", as: "listing"
+  # post "/listings", to: "listing#form"
 
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'listings#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
