@@ -49,6 +49,9 @@ gem 'faker'
 #paginate pages
 gem 'will_paginate', '~> 3.1.0'
 
+#image uploader
+gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
