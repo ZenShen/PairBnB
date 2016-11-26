@@ -2,4 +2,6 @@
 
 <h3><%= current_user.email %></h3>
 
+<%= image_tag @user.avatar.thumb.url %>
+
 <%= link_to "Edit Profile", edit_user_path %>

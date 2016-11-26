@@ -11,6 +11,7 @@
   	email: Faker::Internet.email,
   	password: "123456",
   	role: 1
+  	# avatar: Pathname.new(Rails.root + "app/assets/images/avatar/#{rand(1..6)}.jpg").open
   	)
   puts "Created user with role 1"
 end
@@ -26,6 +27,8 @@ User.all.each do |user|
 	    	price: rand(50..500),
 	    	property_name: Faker::StarWars.character,
 	    	)
+		# listing.photos = [Pathname.new(Rails.root + "app/assets/images/listings/#{rand(1..12)}.jpg").open]
+    # listing.save!
 		puts "Created 1 listing"
 	end
 end

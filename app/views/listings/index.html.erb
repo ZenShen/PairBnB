@@ -20,6 +20,12 @@
 	<tbody>
 	<% @listings.each.with_index(1) do |listing, index| %>
 		<tr>
+		    <td><%= index %><%= "*" if listing.mine?(current_user) %></td>
+        <td>
+          <% if !listing.photos.empty? %>
+            <%= image_tag listing.photos.first.thumb.url %>
+          <% end %>
+        </td>
 			<td><%= "*" if listing.mine?(current_user) %><%= index %></td>
 			<td><%= link_to listing.property_name, listing_path(listing.id) %></td>
 			<td><%= listing.country %></td>

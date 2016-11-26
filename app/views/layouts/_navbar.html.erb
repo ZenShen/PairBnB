@@ -5,6 +5,8 @@
     <li><%= link_to "Signup", sign_in_path %></li>
     <li><%= link_to "About Us", root_url %></li>
     <li><%= link_to "Listings", listings_path %></li>
+    <% if current_user %>
     <li><%= link_to "Profile", "users/#{current_user.id}" %></li>
+    <% end %>
   </ul>
 </nav>

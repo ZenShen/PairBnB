@@ -1,5 +1,9 @@
 <h1>We Are Glad You clicked on Us!</h1>
 
+<% @listing.photos.each do |photos| %>
+<%= image_tag photos.thumb.url %>
+<% end %>
+
 <% if @listing.mine?(current_user) %>
 <%= link_to "Edit listing", edit_listing_path(@listing) %>
 <%= link_to "Delete Listing", listing_path(@listing), method: :delete, data: {:confirm => 'Are you sure?'} %>

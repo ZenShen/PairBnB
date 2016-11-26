@@ -42,7 +42,8 @@ end
 
 def update
 	@user = User.find(params[:id])
-		if @user.update(email: params[:user][:email], role: params[:role])
+	# byebug
+		if @user.update(user_params)
 			render 'show', notice: "Success!"
 		else
 			puts @user.errors.full_messages
@@ -85,9 +86,13 @@ end
    end
  end
 
-def user_params
-    params[Clearance.configuration.user_parameter] || Hash.new
-end
+ def user_params
+   params.require(:user).permit(:email, :password, :avatar)
+ end
+
+# def user_params
+#     params[Clearance.configuration.user_parameter] || Hash.new
+# end
  # def user_params
  #   params.require(:user).permit(:first_name, :last_name, :email, :role, :avatar)
  # end
