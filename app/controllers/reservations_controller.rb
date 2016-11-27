@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
 	def create
+
 		listing = Listing.find(params[:listing_id])
 		reservation = lisitng.reservations.new(reservation_params)
 		reservation.calculate_price

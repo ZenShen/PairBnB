@@ -18,7 +18,7 @@ end
 
 User.all.each do |user|
 	5.times do
-		user.listings.create(
+		listing = user.listings.create(
 			country: Faker::Address.country,
 	    	city_town: Faker::Address.city,
 	    	home_type: Faker::Lorem.word,
