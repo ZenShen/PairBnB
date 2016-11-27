@@ -10,8 +10,8 @@
   User.create(
   	email: Faker::Internet.email,
   	password: "123456",
-  	role: 1
-  	# avatar: Pathname.new(Rails.root + "app/assets/images/avatar/#{rand(1..6)}.jpg").open
+  	role: 1,
+  	avatar: Pathname.new(Rails.root + "app/assets/images/avatar/#{rand(1..9)}.png").open
   	)
   puts "Created user with role 1"
 end
@@ -25,10 +25,10 @@ User.all.each do |user|
 	    	guest: rand(1..6),
 	    	description: Faker::Lorem.paragraph(2),
 	    	price: rand(50..500),
-	    	property_name: Faker::StarWars.character,
+	    	property_name: Faker::StarWars.character
 	    	)
-		# listing.photos = [Pathname.new(Rails.root + "app/assets/images/listings/#{rand(1..12)}.jpg").open]
-    # listing.save!
+		listing.photos = [Pathname.new(Rails.root + "app/assets/images/listings/#{rand(1..6)}.jpg").open]
+    listing.save!
 		puts "Created 1 listing"
 	end
 end
@@ -37,7 +37,8 @@ end
   User.create(
   	email: Faker::Internet.email,
   	password: "123456",
-  	role: 2
+  	role: 2,
+    avatar: Pathname.new(Rails.root + "app/assets/images/avatar/#{rand(1..9)}.png").open
   	)
-  puts "Created 1 user"
+  puts "Created 1 user with role 2"
 end

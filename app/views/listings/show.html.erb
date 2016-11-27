@@ -17,4 +17,10 @@
 	<h3>Description : <%= @listing.description %></h3>
 	<h3>Price (negotiable) : <%= @listing.price %></h3>
 
+    <% if signed_in? %>    
+		<%= render 'reservations/form' %>
+	<% else %>
+	<p>Please <%= link_to "Sign in", sign_in_path %> to make a reservation</p>
+	<% end %>
+
 <%= link_to "Back to all listings", listings_path %>
