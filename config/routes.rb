@@ -16,11 +16,14 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update, :destroy] 
 
-  resources :listings
+  resources :listings do
   # get "/listings", to: "listing/index"
   # get "/listings/:id", to: "listing/show"
   # get "/listings/new", to: "listing#new", as: "listing"
   # post "/listings", to: "listing#form"
+
+  resources :reservations, only: :create
+end
 
   
   # The priority is based upon order of creation: first created -> highest priority.

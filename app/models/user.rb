@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :authentications, :dependent => :destroy
   has_many :listings
+  has_many :reservations
 
   enum role: { superadmin: 0,
                landlord: 1,
