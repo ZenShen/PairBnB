@@ -17,8 +17,12 @@ class UsersController < Clearance::UsersController
 end
 
  def new
-   @user = user_from_params
-   render 'new'
+  if params[:user]
+    @user = user_from_params
+  else
+    @user = User.new
+  end
+  render 'new'
  end
 
  def create
@@ -43,7 +47,7 @@ end
 def update
 	@user = User.find(params[:id])
 	# byebug
-		if @user.update(user_params)
+		 if @user.update(user_params)
 			render 'show', notice: "Success!"
 		else
 			puts @user.errors.full_messages
@@ -87,7 +91,7 @@ end
  end
 
  def user_params
-   params.require(:user).permit(:email, :password, :avatar)
+   params.require(:user).permit(:email, :password, :role, :avatar)
  end
 
 # def user_params

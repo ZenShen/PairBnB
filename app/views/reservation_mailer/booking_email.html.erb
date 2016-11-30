@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+	</head>
+<body>
+	<h1>Congratulations! You have received a booking from <%= @customer.email %> for your <%= @property_name %></h1>
+	<p>
+	You can see details of your new reservation here: 
+	<%= link_to "Reserved listing", @url %>.
+	</p>
+</body>
+</html>

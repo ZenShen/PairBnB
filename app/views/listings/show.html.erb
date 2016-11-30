@@ -23,4 +23,30 @@
 	<p>Please <%= link_to "Sign in", sign_in_path %> to make a reservation</p>
 	<% end %>
 
+		<% if current_user.id == @listing.user_id %>
+			<% if @listing.reservations.any? %>
+			<table>
+				<thead>
+					<tr>
+						<th>Reservation ID</th>
+						<th>User ID</th>
+						<th>Check-In Date</th>
+						<th>Check-out Date</th>
+					</tr>
+				</thead>
+				<tbody>
+				<tr><a href="/listings/<%= @listing.id %>"></a>
+				<% @listing.reservations.each do |reservation| %></tr>
+				<!-- <h3>Reservation Id | User Id | Check-In Date | Check-Out Date | -->
+				<!-- </h3> -->
+					<td><a href= "/listings/<%= @listing.id %>/reservations/<%= reservation.id %>"><%= reservation.id %></a>
+					</td>
+					<td><%= reservation.user.email %></td>
+					<td><%= reservation.check_in %></td>
+					<td><%= reservation.check_out %></td>
+				<% end %>	
+			<% end %>		
+		<% end %>
+	</tbody>
+</table>
 <%= link_to "Back to all listings", listings_path %>

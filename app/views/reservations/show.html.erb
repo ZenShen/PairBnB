@@ -1,0 +1,10 @@
+<h1>Received Reservation</h1>
+
+<h3>Property Name: <%= @name %></h3>
+<h4>Reservation ID: <%= @reservation_id %></h4>
+<h4>Tenant Contact: <%= @customer %></h4>
+<h4>Check-IN Date: <%= @check_in %></h4>
+<h4>Check-OUT Date: <%= @check_out %></h4>
+<h3>Total: <%= @total %></h3>
+
+<%= link_to "Back to all listings", listings_path %>
