@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   # get "/listings/new", to: "listing#new", as: "listing"
   # post "/listings", to: "listing#form"
 
-  resources :reservations, only: :create
+  resources :reservations, only: [:create , :show]
 end
 
   

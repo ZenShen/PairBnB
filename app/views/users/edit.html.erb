@@ -4,13 +4,11 @@
   <%= f.label :Email %>:
   <%= f.text_field :email %><br />
 
-  <%= f.label "Landlord" %> <br />
-    <%= f.check_box :role %> <br />
+  <%= f.radio_button("role", "landlord") %><%= f.label "Landlord" %> <br />
+  
+  <%= f.radio_button("role", "tenant") %><%= f.label "Tenant" %> <br />
 
-    <%= f.label "Tenant" %> <br />
-    <%= f.check_box :role %> <br />
-
-     <%= f.label :Avatar %>:
+  <%= f.label :Avatar %>:
   <%= f.file_field :avatar %><br />
 
   <%= f.submit %>
