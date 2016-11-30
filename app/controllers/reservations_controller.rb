@@ -12,7 +12,8 @@ class ReservationsController < ApplicationController
 
 		if reservation.save
 			redirect_to listing, notice: "Reservation successfu! Your host will contact you."
-			ReservationMailer.booking_email(@customer, @host, @reservation_id, @property_name).deliver_now
+			ReservationJob.perform_later(@customer, @host, @reservation_id, @property_name)
+			# ReservationMailer.booking_email(@customer, @host, @reservation_id, @property_name).deliver_now
 		else
 			redirect_to @listing, notice: "Reservation failed"
 		end
