@@ -14,6 +14,6 @@ development:
   FACEBOOK_KEY: '1763725953879434'
   FACEBOOK_SECRET: '72c423fd2f5f15bff8b26a61b22caeaf'
 
-email:
-  gmail_username: 'pegasus.coding@gmail.com'
-  gmail_password: 'Abcdefgh1'
+# email:
+#   gmail_username: 'pegasus.coding@gmail.com'
+#   gmail_password: 'Abcdefgh1'
