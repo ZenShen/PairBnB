@@ -37,7 +37,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'clearance'
 
 # for configuration of sensitive information
-gem 'figaro'
+gem 'figaro', '~> 0.7.0'
 
 #facebook
 gem 'omniauth'
@@ -58,6 +58,12 @@ gem "letter_opener", :group => :development
 
 #background jobs
 gem 'sidekiq'
+
+#payment gateway
+gem 'braintree' ,'~> 2.33.1'
+
+#generate client token
+gem 'gon', '~> 5.1.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

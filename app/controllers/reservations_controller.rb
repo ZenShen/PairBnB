@@ -5,18 +5,13 @@ class ReservationsController < ApplicationController
 		reservation = listing.reservations.new(reservation_params)
 		reservation.calculate_price 
 
-		@customer = reservation.user 
-		@host = listing.user
-		@reservation_id = reservation.id
-		@property_name = reservation.listing.property_name
-
-		if reservation.save
-			redirect_to listing, notice: "Reservation successfu! Your host will contact you."
-			ReservationJob.perform_later(@customer, @host, @reservation_id, @property_name)
+		# @customer = reservation.user 
+		# @host = listing.user
+		# @reservation_id = reservation.id
+		# @property_name = reservation.listing.property_name
+		redirect_to new_reservation_payment_path(reservation.id), notice: "Reservation successfu! Please proceed with payment and Your host will contact you."
+		# ReservationJob.perform_later(@customer, @host, @reservation_id, @property_name)
 			# ReservationMailer.booking_email(@customer, @host, @reservation_id, @property_name).deliver_now
-		else
-			redirect_to @listing, notice: "Reservation failed"
-		end
 	end
 
 	def show
