@@ -16,6 +16,7 @@ development:
   BRAINTREE_MERCHANT_ID: 'mcp4xn4bxwwtwdtv'
   BRAINTREE_PUBLIC_KEY: 'tp95xpbqvjrd7kd8'
   BRAINTREE_PRIVATE_KEY: '0eaa820bb9a3a6e3392b498dd94002b8'
+  REDIS_URL: 'redis://localhost:6379/0'
 # email:
 #   gmail_username: 'pegasus.coding@gmail.com'
 #   gmail_password: 'Abcdefgh1'
