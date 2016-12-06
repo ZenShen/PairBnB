@@ -65,6 +65,12 @@ gem 'braintree' ,'~> 2.33.1'
 #generate client token
 gem 'gon', '~> 5.1.2'
 
+#for heroku production
+gem 'rails_12factor', group: :production
+
+# The Unicorn web server lets you run any Rails application concurrently by running multiple Ruby processes in a single dyno.
+gem 'unicorn'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
