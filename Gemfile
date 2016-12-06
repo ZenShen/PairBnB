@@ -71,6 +71,8 @@ gem 'rails_12factor', group: :production
 # The Unicorn web server lets you run any Rails application concurrently by running multiple Ruby processes in a single dyno.
 gem 'unicorn'
 
+gem "skylight"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
