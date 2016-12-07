@@ -18,7 +18,8 @@ class PaymentsController < ApplicationController
 
     if @result.success?
       @reservation.save
-      ReservationJob.perform_later(@customer, @host, @reservation_id, @property_name)
+      # ReservationJob.perform_later(@customer, @host, @reservation_id, @property_name)
+      ReservationMailer.booking_email(@customer, @host, @reservation_id, @property_name).deliver_later
       redirect_to listing_reservation_path(@listing.id,@reservation.id), notice: "Congraulations! Your transaction has been successfully!"
     else
       flash[:alert] = "Something went wrong while processing your transaction. Please try again!"
